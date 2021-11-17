@@ -1,5 +1,6 @@
 from flask_app import app                                               # App is used to handle routes
 from flask import render_template, session, redirect, request, jsonify
+from flask_app.models import cakes_model                                # Import the cakes model in order to use Cakes
 
 # ////////////////////////////////////////////////////////
 # ROOT CONTROLLER
@@ -9,8 +10,11 @@ from flask import render_template, session, redirect, request, jsonify
 
 @app.route('/')                                                         # Main Page
 def root():
-    print("******** in index *******************")
-    return render_template("index.html")
+    print("@@@@ Root @@@@")
+    all_cakes = cakes_model.Cakes.get_all()                             # Get All instances of Cakes in the Cakes DB
+    print("Retrieving all cakes")
+    print("Retrieved", len(all_cakes), "cakes")
+    return render_template("index.html", all_cakes = all_cakes)
 
 # //// UTILITIES /////////////////////////////////
 
