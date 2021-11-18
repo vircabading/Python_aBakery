@@ -26,7 +26,7 @@ body {
 }
 
 .logo-img {
-    height: 150px;
+    height: 50px;
     width: auto;
 }
 
@@ -42,15 +42,20 @@ body {
 
 .card {
     background-color: white;
-    border-style: dashed;
-    border-width: 2px;
+    border-style:dashed
+    border-width: 3px;
     border-radius: 10px;
     padding: 1%;
     margin: 0px 0px 10px 0px;
 }
 
 .cake-name {
-    font-family: 'Mr Dafoe', cursive;
+    font-weight: bold;
     font-size: 2rem;
-    color: hotpink;
+    color: rgb(255, 105, 180)
+}
+
+.category-title {
+    font-family: 'Mr Dafoe', cursive;
+    color: rgb(145,104, 174);
 }
