@@ -51,7 +51,7 @@ def cakes_wedding():
         'category': "birthday"
     }
     all_cakes = cakes_model.Cakes.get_all_by_category(data)
-    return render_template("cakes_wedding.html", all_cakes = all_cakes)
+    return render_template("cakes_birthday.html", all_cakes = all_cakes)
 
 # //// UPDATE ////////////////////////////////////
 
