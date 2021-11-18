@@ -10,12 +10,21 @@ from flask_app.models import cakes_model                                # Import
 
 
 
+# //// POST //////////////////////////////////////
+
+@app.route('/cakes/search/post', methods = ['POST'])
+def cakes_search_post():
+    print("@@@@ In Cakes Search POST @@@@")
+    session['searchitem']= request.form['search-item']
+    print("Session search item", session['searchitem'])
+    return redirect ("/cakes/search")
+
 # //// UTILITIES /////////////////////////////////
 
 # //// CREATE ////////////////////////////////////
 
 
-# //// RETRIEVE ////////////////////////////////////
+# //// RETRIEVE //////////////////////////////////
 
 @app.route('/cakes/christening')                            # //// GET ALL CHRISTENING CAKES ////////
 def cakes_christening():
@@ -52,6 +61,16 @@ def cakes_birthday():
     }
     all_cakes = cakes_model.Cakes.get_all_by_category(data)
     return render_template("cakes_birthday.html", all_cakes = all_cakes)
+
+@app.route('/cakes/search')
+def cakes_search():
+    print("@@@@ Cakes Search @@@@")
+    data = {
+        'searchitem': "%" + session['searchitem'] + "%"
+    }
+    print("Data:", data)
+    all_cakes = cakes_model.Cakes.get_all_by_search_item(data)
+    return render_template("cakes_search.html", all_cakes = all_cakes)
 
 # //// UPDATE ////////////////////////////////////
 
