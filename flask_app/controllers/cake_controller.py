@@ -45,7 +45,7 @@ def cakes_wedding():
     return render_template("cakes_wedding.html", all_cakes = all_cakes)
 
 @app.route('/cakes/birthday')                                # //// GET ALL WEDDING CAKES ////////
-def cakes_wedding():
+def cakes_birthday():
     print("@@@@ Cakes / Birthday @@@@")
     data = {
         'category': "birthday"

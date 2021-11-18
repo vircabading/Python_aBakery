@@ -40,6 +40,12 @@ body {
     font-size: 1.2rem;
 }
 
+.btn-green {
+    background-color: lightseagreen;
+    color: white;
+    font-weight: bold;
+}
+
 .card {
     background-color: white;
     border-style:dashed
