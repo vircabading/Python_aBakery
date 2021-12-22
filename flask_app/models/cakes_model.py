@@ -45,7 +45,7 @@ class Cakes:
     def get_all_by_category(cls, data:dict):
         query = "SELECT * FROM cakes WHERE category = %(category)s;"
         print("in get all by category || query =", query)
-        results = connectToMySQL(TARGETDATABASE).query_db(query, data)        # Call the connectToMySQL function with the target db
+        results = connectToMySQL(TARGETDATABASE).query_db(query, data)  # Call the connectToMySQL function with the target db
         list_of_instances = []                                          # Initialize an empty list where we can store instances of the class
         for class_instance in results:                                  # Iterate over the db results and create instances of the cls objects
             list_of_instances.append( cls(class_instance) )             # Add each instance of the class to the list of instances
@@ -57,7 +57,7 @@ class Cakes:
     def get_all_by_search_item(cls, data:dict):
         query = "SELECT * FROM cakes WHERE cakes.name LIKE %(searchitem)s;"
         print("in get all by category || query =", query)
-        results = connectToMySQL(TARGETDATABASE).query_db(query, data)        # Call the connectToMySQL function with the target db
+        results = connectToMySQL(TARGETDATABASE).query_db(query, data)  # Call the connectToMySQL function with the target db
         list_of_instances = []                                          # Initialize an empty list where we can store instances of the class
         for class_instance in results:                                  # Iterate over the db results and create instances of the cls objects
             list_of_instances.append( cls(class_instance) )             # Add each instance of the class to the list of instances
